@@ -15,7 +15,7 @@ class LocalizationServiceImplTest {
 
     @ParameterizedTest
     @MethodSource("nonRussianCountries")
-    void test_locale_return_appropriate_answer(Country country) {
+    void shouldReturnAppropriateAnswer(Country country) {
         LocalizationService localizationService = new LocalizationServiceImpl();
         String expectedRU = "Добро пожаловать";
         String expectedEN = "Welcome";

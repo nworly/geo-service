@@ -21,7 +21,7 @@ class MessageSenderImplTest {
 
     @ParameterizedTest
     @MethodSource("russianIPs")
-    void test_send_russian_text(String ip) {
+    void shouldSendRussianText(String ip) {
         GeoService geoService = Mockito.mock(GeoService.class);
         Mockito.when(geoService.byIp(ArgumentMatchers.startsWith("172.")))
                 .thenReturn(new Location("Moscow", Country.RUSSIA, null, 0));
@@ -39,7 +39,7 @@ class MessageSenderImplTest {
 
     @ParameterizedTest
     @MethodSource("americanIPs")
-    void test_send_english_text(String ip) {
+    void shouldSendEnglishText(String ip) {
         GeoService geoService = Mockito.mock(GeoService.class);
         Mockito.when(geoService.byIp(ArgumentMatchers.startsWith("96.")))
                 .thenReturn(new Location("New York", Country.USA, null, 0));
